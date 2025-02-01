@@ -15,3 +15,6 @@ https://hal.science/hal-03974553/document
 https://ebrary.net/202815/engineering/deep_learning_approach_predict_grade_glaucoma_fundus_images_through_constitutional_neural_networks
 
 
+
+
+
