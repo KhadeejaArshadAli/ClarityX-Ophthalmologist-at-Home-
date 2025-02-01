@@ -1,61 +1,66 @@
 # ClarityX-Ophthalmologist-at-Home
-
-# EfficientNetB0 for Retina Fundus Classification
+# Image Clustering and Classification using KMeans and EfficientNetB0
 
 ## Overview
-This project utilizes **EfficientNetB0**, a pre-trained convolutional neural network, for **retina fundus image classification**. The model is fine-tuned on a medical dataset to improve accuracy in detecting retinal diseases.
+This project involves clustering image data using **KMeans**, training a deep learning model with **EfficientNetB0**, and deploying the model through a **Flask** web application.
 
-## Why EfficientNetB0?
-EfficientNetB0 is a lightweight and highly efficient deep learning model trained on **ImageNet**. It provides a good balance of **accuracy and computational efficiency**, making it suitable for medical image analysis.
+## Project Workflow
+1. **Image Clustering with KMeans**
+   - Used **KMeans clustering** to group similar images.
+   - Applied **Elbow Method** and **Silhouette Analysis** to determine the optimal number of clusters.
+   - Evaluated the clustering performance using **silhouette scores**.
 
-### Key Features:
-- **Pre-trained on ImageNet**: Leverages transfer learning for faster training.
-- **Optimized for accuracy & efficiency**: Uses compound scaling to balance width, depth, and resolution.
-- **Lightweight architecture**: Suitable for deployment on various platforms.
+2. **Training with EfficientNetB0**
+   - Used a **pre-trained EfficientNetB0** model for feature extraction and classification.
+   - Performed **data preprocessing**, **augmentation**, and **fine-tuning** for improved accuracy.
+   - Validated and tested the model to ensure robust performance.
 
-## Model Architecture
-The model consists of:
-1. **Input Layer**: Takes in **256x256x3** RGB images.
-2. **EfficientNetB0 Backbone**: Pre-trained on ImageNet with `include_top=False`.
-3. **Batch Normalization**: Stabilizes training by normalizing feature maps.
-4. **MaxPooling & Global Average Pooling**: Reduces dimensionality and extracts global features.
-5. **Fully Connected Layer (512 neurons, ReLU activation)**: Learns high-level patterns.
-6. **Dropout (0.4)**: Prevents overfitting by randomly deactivating neurons.
-7. **Output Layer (Softmax Activation)**: Classifies images into `len(class_names)` categories.
+3. **Flask Application for Deployment**
+   - Created a **Flask-based web app** to serve the trained model.
+   - Allows users to upload images and get predictions in real-time.
+   - Ensured smooth integration with front-end UI.
 
-## Training Strategy
-- **Fine-tuning**: The base EfficientNetB0 model is made **trainable**, allowing it to learn medical-specific features.
-- **Transfer Learning**: Initially, only custom layers are trained, then the entire model is fine-tuned.
-- **Optimization**: Uses an appropriate optimizer (e.g., Adam) with a learning rate scheduler.
+## Technologies Used
+- **Machine Learning & Deep Learning**: `KMeans`, `EfficientNetB0`
+- **Libraries**: `scikit-learn`, `TensorFlow`, `Keras`
+- **Data Processing**: `NumPy`, `Pandas`, `Matplotlib`
+- **Web Framework**: `Flask`
 
-## Why Use Softmax in the Output Layer?
-The softmax activation function is used for **multi-class classification**, ensuring that the output probabilities sum to 1, making interpretation easier.
-
-## Dataset: ImageNet & Retina Fundus Data
-- **ImageNet**: Pre-training dataset with **14M+ images across 1,000 categories**.
-- **Retina Fundus Dataset**: Domain-specific images for medical classification.
-
-## Running the Model
-1. Install dependencies:
-   ```sh
-   pip install tensorflow keras numpy matplotlib
+## How to Run the Project
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
    ```
-2. Train the model:
-   ```python
-   model.fit(train_dataset, epochs=20, validation_data=val_dataset)
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
    ```
-3. Evaluate:
-   ```python
-   model.evaluate(test_dataset)
+3. Run the Flask app:
+   ```bash
+   python app.py
    ```
+4. Open your browser and go to `http://127.0.0.1:5000/` to access the application.
 
-## Future Improvements
-- Experiment with **EfficientNetB1-B7** for better accuracy.
-- Implement **data augmentation** to improve generalization.
-- Optimize for **edge devices** (e.g., TensorFlow Lite, ONNX).
+## Results
+- Achieved **optimal clustering** for dataset categorization.
+- Trained **EfficientNetB0** with high accuracy.
+- Successfully deployed a **Flask-based web interface** for image classification.
 
-## Conclusion
-EfficientNetB0 provides a **robust foundation** for retina fundus classification, leveraging **transfer learning and fine-tuning** to achieve high performance in medical imaging tasks.
+## Future Enhancements
+- Improve clustering techniques with **advanced feature extraction**.
+- Optimize the Flask application with **faster inference time**.
+- Add a **database** to store user queries and predictions.
+
+## Contributors
+- **Khadeeja Arshad Ali -B20102057**
+- **Nabiha Faisal -B20102130**
+- **Saad Shariq Siddique -B20102141**
+- **M.Noor Sheikh -B20102107**
+
+## License
+This project is licensed under the **MIT License**.
+
 
 
 
