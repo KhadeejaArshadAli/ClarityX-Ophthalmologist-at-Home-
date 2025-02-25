@@ -1,5 +1,6 @@
 # ClarityX-Ophthalmologist-at-Home
 # Image Clustering and Classification using KMeans and EfficientNetB0
+![Model](modelfinal.png)
 
 ## Overview
 This project involves clustering image data using **KMeans**, training a deep learning model with **EfficientNetB0**, and deploying the model through a **Flask** web application.
