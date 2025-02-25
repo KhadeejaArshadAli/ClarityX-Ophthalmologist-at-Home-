@@ -1,5 +1,6 @@
 # ClarityX-Ophthalmologist-at-Home
 # Image Clustering and Classification using KMeans and EfficientNetB0
+![Data](mvhmvhm.png)
 ![Model](modelfinal.png)
 
 ## Overview
